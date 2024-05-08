@@ -13,4 +13,4 @@ class AuthController(http.Controller):
     @http.route('/api/get-headers', type='json', auth='user', cors="*", csrf=False)
     def api_info(self, *args, **kwargs):
         headers = request.httprequest.headers
-        return headers
+        return dict(headers)
